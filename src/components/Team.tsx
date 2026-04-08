@@ -91,11 +91,11 @@ export default function Team() {
   const displayMembers = teamMembers.length > 0 ? teamMembers : defaultTeamMembers;
 
   return (
-    <section id="team" className="py-20 bg-surface">
+    <section id="team" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Team</h2>
-          <p className="text-secondary max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Team</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Senior engineers with deep expertise across all technology domains
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function Team() {
         {loading ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="animate-pulse bg-gray-100 rounded-2xl h-48" />
+              <div key={i} className="animate-pulse bg-gray-200 dark:bg-gray-700 rounded-2xl h-48" />
             ))}
           </div>
         ) : (
@@ -113,22 +113,22 @@ export default function Team() {
               return (
                 <div
                   key={member.id}
-                  className="group bg-background rounded-2xl p-6 border border-gray-100 hover:border-gray-200 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 text-center"
+                  className="group bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 text-center"
                 >
                   {member.avatar_url ? (
                     <img src={member.avatar_url} alt={member.name} className="w-32 h-32 rounded-full object-cover mx-auto mb-4" />
                   ) : (
-                    <div className="w-32 h-32 bg-gradient-to-br from-accent-blue to-accent-green rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="w-14 h-14 text-white" />
                     </div>
                   )}
-                  <h3 className="text-lg font-semibold text-primary mb-1">{member.name}</h3>
-                  <p className="text-accent-blue font-medium text-sm mb-3">{member.role}</p>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">{member.name}</h3>
+                  <p className="text-blue-600 dark:text-blue-400 font-medium text-sm mb-3">{member.role}</p>
                   <div className="flex flex-wrap justify-center gap-2">
                     {member.skills?.map((skill, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 bg-gray-100 text-secondary text-xs rounded-full"
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs rounded-full"
                       >
                         {skill}
                       </span>

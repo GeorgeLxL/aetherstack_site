@@ -31,11 +31,11 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-surface">
+    <section id="services" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">What We Do</h2>
-          <p className="text-secondary max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">What We Do</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Complete development services from hardware to cloud to user-facing applications
           </p>
         </div>
@@ -44,13 +44,13 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group p-8 bg-background rounded-2xl border border-gray-100 hover:border-gray-200 hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+              className="group p-8 bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600 hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
             >
               <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${service.gradient} mb-6`}>
                 <service.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-primary mb-3">{service.title}</h3>
-              <p className="text-secondary">{service.subtext}</p>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{service.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{service.subtext}</p>
             </div>
           ))}
         </div>

@@ -155,11 +155,11 @@ export default function Portfolio() {
   const displayItems = workItems.length > 0 ? workItems : defaultWorkItems;
 
   return (
-    <section id="portfolio" className="py-20 bg-surface">
+    <section id="portfolio" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Work</h2>
-          <p className="text-secondary max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Work</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Real-world solutions we&apos;ve built for our clients
           </p>
         </div>
@@ -167,7 +167,7 @@ export default function Portfolio() {
         {loading ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="animate-pulse bg-gray-100 rounded-2xl h-64" />
+              <div key={i} className="animate-pulse bg-gray-200 dark:bg-gray-700 rounded-2xl h-64" />
             ))}
           </div>
         ) : (
@@ -175,24 +175,24 @@ export default function Portfolio() {
             {displayItems.map((item) => (
               <div
                 key={item.id}
-                className="group bg-background rounded-2xl border border-gray-100 hover:border-gray-200 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 {item.image_url ? (
                   <img src={item.image_url} alt={item.title} className="h-40 w-full object-cover" />
                 ) : (
-                  <div className="h-40 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
-                    <Box className="w-16 h-16 text-gray-300" />
+                  <div className="h-40 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                    <Box className="w-16 h-16 text-gray-400" />
                   </div>
                 )}
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-primary mb-2 group-hover:text-accent-blue transition-colors">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark group-hover:text-blue-400 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-secondary text-sm mb-4">{item.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{item.description}</p>
                   <div className="space-y-2 text-sm">
-                    <p><span className="font-medium text-primary">Challenge:</span> <span className="text-secondary">{item.challenge}</span></p>
-                    <p><span className="font-medium text-primary">Solution:</span> <span className="text-secondary">{item.solution}</span></p>
-                    <p><span className="font-medium text-accent-green">{item.result}</span></p>
+                    <p><span className="font-medium text-gray-900 dark:text-white">Challenge:</span> <span className="text-gray-600 dark:text-gray-300">{item.challenge}</span></p>
+                    <p><span className="font-medium text-gray-900 dark:text-white">Solution:</span> <span className="text-gray-600 dark:text-gray-300">{item.solution}</span></p>
+                    <p><span className="font-medium text-green-600 dark:text-green-400">{item.result}</span></p>
                   </div>
                 </div>
               </div>
