@@ -16,9 +16,9 @@ export default function Contact() {
               Book a 30-minute technical consultation with our senior team. We specialize in building complete, production-ready solutions — from device firmware to cloud infrastructure to web and mobile applications. Whether you need a new product built from scratch or want to modernize an existing system, our team has the expertise to deliver.
             </p>
             <div className="text-lg text-gray-300 dark:text-gray-300 space-y-4">
-              <a href="mailto:contact@aetherstack.com" className="flex items-center gap-3">
+              <a href="mailto:crownelf4@gmail.com" className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span>contact@aetherstack.com</span>
+                <span>crownelf4@gmail.com</span>
               </a>
             </div>
           </div>
