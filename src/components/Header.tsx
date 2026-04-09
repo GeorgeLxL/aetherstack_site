@@ -77,6 +77,14 @@ export default function Header() {
               <Download className="w-4 h-4" />
               Resume
             </a>
+            <a 
+              href="/Business_Partnership_Proposal.pdf" 
+              download
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-secondary dark:text-gray-300 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              Download Proposal
+            </a>
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg text-secondary dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -120,6 +128,14 @@ export default function Header() {
             >
               <Download className="w-4 h-4" />
               Resume
+            </a>
+            <a 
+              href="/Business_Partnership_Proposal.pdf" 
+              download
+              className="flex items-center gap-2 py-2 text-sm font-medium text-secondary dark:text-gray-300"
+            >
+              <Download className="w-4 h-4" />
+              Download Proposal
             </a>
           </nav>
         )}
