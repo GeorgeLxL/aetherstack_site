@@ -14,7 +14,9 @@ import {
   Menu,
   X,
   ArrowLeft,
-  Mail
+  Mail,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 export default function AdminLayout({
@@ -25,7 +27,16 @@ export default function AdminLayout({
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const stored = localStorage.getItem('theme');
+    if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      setDarkMode(true);
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
 
   useEffect(() => {
     async function checkUser() {
@@ -52,6 +63,18 @@ export default function AdminLayout({
     router.push('/login');
   }
 
+  function toggleTheme() {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    if (newMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -73,11 +96,11 @@ export default function AdminLayout({
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="md:hidden fixed top-4 left-4 z-50">
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="p-2 bg-white rounded-lg shadow-md"
+          className="p-2 bg-white dark:bg-gray-800 rounded-lg shadow-md"
         >
           {sidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -88,11 +111,17 @@ export default function AdminLayout({
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
         md:translate-x-0
       `}>
-        <div className="p-6 border-b border-gray-800">
+        <div className="p-6 border-b border-gray-800 flex justify-between items-center">
           <Link href="/admin" className="flex items-center gap-2 text-xl font-bold hover:text-gray-200">
             <ArrowLeft className="w-4 h-4" />
             AetherStack Admin
           </Link>
+          <button
+            onClick={toggleTheme}
+            className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
+          >
+            {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
         </div>
         <nav className="p-4 space-y-2">
           {navItems.map((item) => (
@@ -116,7 +145,7 @@ export default function AdminLayout({
         </nav>
       </aside>
 
-      <main className="md:ml-64 p-6 md:p-8">
+      <main className="md:ml-64 p-6 md:p-8 dark:text-white">
         {children}
       </main>
     </div>
