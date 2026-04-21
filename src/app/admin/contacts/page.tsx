@@ -11,6 +11,17 @@ export default function AdminContacts() {
 
   useEffect(() => {
     fetchContacts();
+
+    // Subscribe to real-time updates for contacts
+    const subscription = supabase?.channel('contacts_realtime')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'contacts' }, () => {
+        fetchContacts();
+      })
+      .subscribe();
+
+    return () => {
+      subscription?.unsubscribe();
+    };
   }, []);
 
   async function fetchContacts() {
