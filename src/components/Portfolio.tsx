@@ -56,10 +56,9 @@ export default function Portfolio() {
             spaceBetween={24}
             slidesPerView={1}
             loop={true}
-            loopedSlides={1}
             breakpoints={{
-              640: { slidesPerView: 2, loopedSlides: 2 },
-              1024: { slidesPerView: 3, loopedSlides: 3 },
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
             }}
             autoplay={{ delay: 4000, disableOnInteraction: false }}
             speed={1500}
