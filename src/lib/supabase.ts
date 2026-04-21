@@ -32,7 +32,7 @@ export async function uploadImage(file: File, bucket: string, folder: string): P
 export async function getCounts() {
   if (!supabase) return null;
   
-  const today = new Date(new Date().setHours(0, 0, 0, 0)).toISOString();
+  const today = new Date(Date.UTC(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate())).toISOString();
   
   const [members, work, evals, contacts] = await Promise.all([
     supabase.from('team_members').select('*', { count: 'exact' }),

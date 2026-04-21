@@ -49,9 +49,6 @@ export default function AdminDashboard() {
 
     // Subscribe to real-time updates
     const subscription = supabase?.channel('dashboard_counts')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'team_members' }, () => fetchCounts())
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'work_items' }, () => fetchCounts())
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'client_evaluations' }, () => fetchCounts())
       .on('postgres_changes', { event: '*', schema: 'public', table: 'contacts' }, () => fetchCounts())
       .subscribe();
 
