@@ -3,8 +3,8 @@ export type TeamMember = {
   name: string;
   role: string;
   skills: string[];
-  icon?: string;
   avatar_url?: string;
+  country?: string;
   created_at: string;
 };
 

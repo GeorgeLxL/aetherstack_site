@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="py-12 bg-gray-900 dark:bg-gray-950 text-white">
+    <footer className="py-12 bg-gray-900 dark:bg-[#050505] text-white">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 dark:border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-gray-800 dark:border-white/5 mt-8 pt-8 text-center text-gray-400 dark:text-gray-600 text-sm">
           <p>&copy; {new Date().getFullYear()} AetherStack. All rights reserved.</p>
         </div>
       </div>
