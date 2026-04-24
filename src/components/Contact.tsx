@@ -22,9 +22,9 @@ export default function Contact() {
               Book a 30-minute technical consultation with our senior team. We specialize in building complete, production-ready solutions — from device firmware to cloud infrastructure to web and mobile applications.
             </p>
             <div className="text-lg text-gray-600 dark:text-gray-400 space-y-4">
-              <a href="mailto:support@aetherstack.top" className="flex items-center gap-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <a href="mailto:contact@aetherstack.top" className="flex items-center gap-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>support@aetherstack.top</span>
+                <span>contact@aetherstack.top</span>
               </a>
             </div>
           </div>
