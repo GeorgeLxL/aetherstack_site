@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://aetherstack.com'),
+  metadataBase: new URL('https://aetherstack.top'),
   title: {
     default: "AetherStack | From Devices to Cloud to Apps",
     template: "%s | AetherStack",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://aetherstack.com",
+    url: "https://aetherstack.top",
     siteName: "AetherStack",
     title: "AetherStack | From Devices to Cloud to Apps",
     description: "Complete, production-ready web, mobile, and IoT systems — no gaps, no juniors, no outsourcing.",
