@@ -75,14 +75,14 @@ export default function Header() {
             >
               {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
-            <a 
+            {/* <a 
               href="/Business_Partnership_Proposal.pdf" 
               download
               className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-gray-900 dark:bg-white text-white dark:text-black rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
             >
               <Download className="w-4 h-4" />
               Business Proposal
-            </a>
+            </a> */}
           </nav>
 
           <div className="flex items-center gap-2 md:hidden">
@@ -113,14 +113,14 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <a 
+            {/* <a 
               href="/Business_Partnership_Proposal.pdf" 
               download
               className="flex items-center gap-2 py-2 text-sm font-medium text-gray-600 dark:text-gray-400"
             >
               <Download className="w-4 h-4" />
               Business Proposal
-            </a>
+            </a> */}
           </nav>
         )}
       </div>
